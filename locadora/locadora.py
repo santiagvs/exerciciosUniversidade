@@ -19,8 +19,6 @@ while True:
     if cliente["sexo"] == "F" and cliente["dias"] > 7:
       print(f"- {cliente['nome']}")
 
-  if input("\nDeseja sair do programa? (s/n) ") != 's':
-    continue
-  else:
+  if input("\nDeseja sair do programa? (s/n) ") == 's':
     print("Obrigado por utilizar!")
     break

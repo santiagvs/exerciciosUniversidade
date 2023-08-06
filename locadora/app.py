@@ -37,7 +37,7 @@ def valida_sexo():
 
 def valida_placa():
   while True:
-    placa = input("Digite aqui a placa do carro: ")
+    placa = input("Digite aqui a placa do carro: ").upper()
     validador = re.compile(r"[A-Z]{3}[0-9][0-9A-Z][0-9]{2}")
     if validador.match(placa):
       return placa
