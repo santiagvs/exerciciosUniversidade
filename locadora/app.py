@@ -1,4 +1,5 @@
 import os
+import re
 
 TAXA_DIARIA = 70
 TAXA_POR_KM = 0.10
@@ -7,8 +8,8 @@ def cadastro_geral(clientes):
   while True:
     os.system('clear')
     nome_do_cliente = input("Digite aqui o nome do cliente: ")
-    sexo = cadastro_sexo()
-    placa_do_carro = input("Digite aqui a placa do carro: ")
+    sexo = valida_sexo()
+    placa_do_carro = valida_placa()
     qtd_km_contratados = int(input("Digite a quantidade de km contratados: "))
     qtd_dias_contratados = int(input("Digite a quantidade de dias contratados: "))
 
@@ -28,9 +29,18 @@ def cadastro_geral(clientes):
     if input("Deseja inserir mais dados? Digite 's' se sim, e 'n' se não: ") != 's':
       break
 
-def cadastro_sexo():
+def valida_sexo():
   while True:
     sexo = input("Digite F para *feminino* e M para *masculino*: ")
     if sexo in ["F", "M"]:
-      break
+      return sexo
     print("Por favor, digite o sexo de acordo com os caracteres F ou M.")
+
+def valida_placa():
+  while True:
+    placa = input("Digite aqui a placa do carro: ")
+    validador = re.compile(r"[A-Z]{3}[0-9][0-9A-Z][0-9]{2}")
+    if validador.match(placa):
+      return placa
+    else:
+      print("Digite uma placa válida.")
