@@ -29,8 +29,8 @@ def cadastro_geral(clientes):
       break
 
 def cadastro_sexo():
-  sexo = input("Digite F para *feminino* e M para *masculino*: ")
   while True:
+    sexo = input("Digite F para *feminino* e M para *masculino*: ")
     if sexo in ["F", "M"]:
       break
     print("Por favor, digite o sexo de acordo com os caracteres F ou M.")

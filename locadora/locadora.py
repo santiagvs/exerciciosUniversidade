@@ -1,4 +1,4 @@
-import metodosLocadora as app
+import app
 
 clientes = []
 
