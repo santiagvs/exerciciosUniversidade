@@ -14,12 +14,11 @@ def cadastro_geral(clientes):
     qtd_dias_contratados = int(input("Digite a quantidade de dias contratados: "))
 
     cliente = {
-      "nome": nome_do_cliente,
+      "nome": nome_do_cliente.capitalize(),
       "sexo": sexo,
       "placa": placa_do_carro,
       "km": qtd_km_contratados,
-      "dias": qtd_dias_contratados,
-      "valor_total": 0
+      "dias": qtd_dias_contratados
     }
 
     cliente["valor_total"] = TAXA_DIARIA * cliente["dias"] + TAXA_POR_KM * cliente["km"]

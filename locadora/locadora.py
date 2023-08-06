@@ -7,7 +7,7 @@ while True:
 
   print("\nValor total pago por placa:")
   for cliente in clientes:
-    print(f"{cliente['placa']}: R${cliente['valor_total']:.2f}")
+    print(f"- {cliente['placa']}: R${cliente['valor_total']:.2f}")
 
   km_total = sum(cliente['km'] for cliente in clientes)
   numero_clientes = len(clientes)
